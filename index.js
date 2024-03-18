@@ -1,5 +1,11 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  if(word.length<2){
+    return true;
+  } else if(word[0]===word[word.length-1]){
+    return isPalindrome(word.slice(1,-1))
+  } else{
+    return false;
+  }
 }
 
 /* 
@@ -7,7 +13,9 @@ function isPalindrome(word) {
 */
 
 /*
-  Add written explanation of your solution here
+  Each loop compares the first and last letters
+  If there aren't letters left to compare, it sends true back up the layers
+  if the first and last letters don't match, it sends false back up the layers
 */
 
 // You can run `node index.js` to view these console logs
